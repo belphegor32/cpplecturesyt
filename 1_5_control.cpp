@@ -23,7 +23,7 @@ int main(){
 //     for(declaration | expression; bool-expression ; expression){
 //         break; // выйди из цикла
 //         continue; // перескочи на следующую итерацию
-//     }
+//     }    
 
 
 
