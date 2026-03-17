@@ -4,6 +4,8 @@ int main(){
     
     int x;
     std::cin >> x;
+    // new line
+
     // switch(x){
     // case 1:
     //     std::cout << "AAAA";
