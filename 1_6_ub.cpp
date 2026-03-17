@@ -17,7 +17,7 @@ int main(){
     // "abc" + 5.0f; // семантическая ошибка 
 
 
-    // new line
+    // new line yes
 
     return 0;
 } 
