@@ -4,7 +4,6 @@ int main(){
     
     int x;
     std::cin >> x;
-    // new line new rem change
 
     // switch(x){
     // case 1:
