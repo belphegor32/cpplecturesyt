@@ -62,6 +62,6 @@ int main(){
     std::cout << (long long)vp << std::endl;
     // NULL - макрос нуля
     // nullptr - ноль в мире указателей (захардкоженный 0 типа указателей)
-    // yo
+    // yo oyyyooy Heeeee
     return 0;
 }
