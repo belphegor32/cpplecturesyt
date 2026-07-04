@@ -9,9 +9,14 @@ public:
     void f(int y){
         std::cout << x + y;
     }
-
+    
+    friend void g(C, int);
+    friend class CC;
 };
 
+void g(C c, int y){
+    std::cout << c.x + y + 1 << std::endl;
+}
 
 int main(){
 
