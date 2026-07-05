@@ -3,17 +3,6 @@
 #include <cstring>
 #include <algorithm>
 
-class Complex {
-    double re = 0.0;
-    double im = 0.0;
-
-public:
-    // Members initializer list
-    Complex(double re);
-    Complex(double re, double im): re(re), im(im) {}
-};
-Complex::Complex(double re): re(re) {}
-
 class String {
 
     char* arr = nullptr;
@@ -26,8 +15,9 @@ class String {
     }
 
 public:
-    String() = delete; // default constructor
-    
+
+    String() = default; // default constructor
+
     String(size_t n, char c): String(n) {
         memset(arr, c, n);
     }
@@ -42,6 +32,38 @@ public:
         // memmove(arr, other.arr, sz); верно, даже если пересекаются диапазоны
     }
 
+    // String& operator=(const String& other) {
+    //     if(&other == this){
+    //         return *this;
+    //     }
+    //     delete[] arr;
+    //     sz = other.sz;
+    //     cap = other.cap;
+    //     arr = new char[other.cap];
+    //     memcpy(arr, other.arr, sz + 1);
+    //     return *this;
+    // }
+
+
+    // copy and swap
+    // String& operator=(const String& other){
+    //     String copy = other;
+    //     swap(copy);
+    //     return *this;
+    // }
+
+    // copy and swap
+    String& operator=(String other){
+        swap(other);
+        return *this;
+    }
+
+    void swap(String& other){
+        std::swap(arr, other.arr);
+        std::swap(sz, other.sz);
+        std::swap(cap, other.cap);
+    }
+
     String(String&) = default;
 
     ~String(){
@@ -49,26 +71,13 @@ public:
     }
 };
 
-int x = 0;
-
-struct C {
-    const int& r;
-    C(): r(5) {}
-};
-
-
 int main(){
-
-    // String s; // default initialization
 
     String s = {'a', 'b', 'c', 'd'};
     String s2{2, 'a'};
 
     String s4 = s;
 
-    // std::vector<int> v = {1, 2, 3, 4, 5, 6};
-
-
-
+    s = s2;
     return 0;
 }
